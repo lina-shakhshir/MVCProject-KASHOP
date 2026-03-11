@@ -1,13 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVCProject.Data;
 
 namespace MVCProject.Areas.User.Controllers
 {
     [Area("User")]
     public class HomeController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
         public IActionResult Index()
         {
-            return View();
+            var categories = context.Categories.ToList();
+            return View(categories);
+         
         }
     }
 }
