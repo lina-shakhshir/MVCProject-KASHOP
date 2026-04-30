@@ -6,7 +6,7 @@ namespace MVCProject.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Home", new { area = "User" });
+            return RedirectToAction("Index", "Home", new { area = "Admin" });
         }
     }
 }
